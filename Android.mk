@@ -1,6 +1,6 @@
 # Board specific SELinux policy variable definitions
 ifeq ($(call is-vendor-board-platform,QCOM),true)
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
        device/qcom/sepolicy \
        device/qcom/sepolicy/common \
        device/qcom/sepolicy/test \
@@ -11,7 +11,7 @@ ifeq ($(TARGET_USES_CSVT),true)
        BOARD_SEPOLICY_DIRS += device/qcom/sepolicy/common/csvt
 endif
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
        genfs_contexts \
        file_contexts \
        service_contexts \
